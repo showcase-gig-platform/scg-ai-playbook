@@ -1,0 +1,19 @@
+scg-ai-playbook
+Copyright 2025 SCG (and contributors)
+
+This product includes software developed at or based on the following projects:
+
+================================================================================
+Tsumiki
+================================================================================
+
+This product includes modified software originally licensed under the MIT License.
+
+Project: Tsumiki
+Repository: https://github.com/classmethod/tsumiki
+Copyright (c) 2025 makotan
+
+The commands in tools/cursor/commands/ are based on Tsumiki's command structure
+and have been adapted for use with Cursor IDE.
+
+The MIT License text is included in licenses/classmethod-tsumiki/LICENSE.
