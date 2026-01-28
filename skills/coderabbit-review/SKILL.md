@@ -1,6 +1,8 @@
 ---
 name: coderabbit-review
 description: Use CodeRabbit CLI to receive external code review feedback and address identified issues. Invoke this skill when the user requests CodeRabbit review, or proactively after implementing significant code changes to get feedback and improve code quality.
+compatibility: Requires coderabbit CLI, git, and access to the internet. The target directory must be a git repository.
+license: Apache-2.0
 ---
 
 # Coderabbit Review
