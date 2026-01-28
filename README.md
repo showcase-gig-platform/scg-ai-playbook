@@ -5,6 +5,7 @@ AI活用に関する汎用的なガイドラインやツール設定を共有す
 ## Why SCG AI Playbook?
 
 このリポジトリは以下を公開するものです。
+
 - AIを安全かつ実務的に活用するための「考え方」と「型」
 - 特定のツールやモデルに依存しない再利用可能なPlaybook
 
@@ -15,11 +16,12 @@ AI活用に関する汎用的なガイドラインやツール設定を共有す
 
 ## ディレクトリ構造
 
-```
+```plaintext
 scg-ai-playbook/
 ├── philosophy/       # AI活用のフィロソフィー（位置付け・役割分担・判断基準）
 ├── governance/       # ガバナンス（パブリックAI利用時の基本ルール）
 ├── guidelines/       # AI活用全般のガイドライン
+├── skills/           # Agent Skills
 └── tools/            # ツール設定・テンプレート
     └── cursor/       # Cursor関連の設定ファイル
         ├── commands/ # team commands
@@ -48,7 +50,11 @@ AIをどう位置付け、どう使うかの「前提」を揃えるためのド
 - **入れてはいけない情報の分類（抽象化）**: 機密情報を「カテゴリ」で整理し、具体例よりも再現可能な判断軸を提示
 - **OSS / 公開物に含めてよいAI生成物の考え方**: ライセンス、出所・根拠、再現性、レビュー責任、混入リスク（秘匿情報/著作物）など
 
-### tools/cursor/
+### [skills/](./skills/)
+
+[Agent Skills](https://agentskills.io/home)に基づくスキルを配置します。
+
+### [tools/cursor/](./tools/cursor/)
 
 [Cursor](https://cursor.sh/)エディタで使用できるチームコマンド、チームルールの設定を配置します。
 
