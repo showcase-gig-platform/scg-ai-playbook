@@ -7,6 +7,10 @@
 - **commands/**: チームコマンド（Markdown形式）
 - **rules/**: チームルール（Markdown形式）
 
+このリポジトリでは、[`../../.cursor-plugin/plugin.json`](../../.cursor-plugin/plugin.json) から `tools/cursor/commands/` を Cursor Plugin の command path として参照しています。
+
+そのため、ここにあるコマンドは team command としての利用だけでなく、plugin 配布対象としても整理していく前提です。
+
 ## チームルール
 ### Team Rules の形式と適用方法
 - **プレーンテキスト**: Team Rules は自由記述のテキストです。Project Rules のようなフォルダ構造は使用せず、globs、alwaysApply、ルールタイプといったメタデータもサポートしません。

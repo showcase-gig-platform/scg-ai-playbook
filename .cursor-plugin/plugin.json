@@ -1,0 +1,20 @@
+{
+  "name": "scg-ai-playbook",
+  "version": "0.1.0",
+  "description": "Reusable Cursor skills and team commands for practical AI-assisted development workflows.",
+  "author": {
+    "name": "Showcase Gig"
+  },
+  "homepage": "https://github.com/showcase-gig-platform/scg-ai-playbook",
+  "repository": "https://github.com/showcase-gig-platform/scg-ai-playbook",
+  "license": "Apache-2.0",
+  "keywords": [
+    "cursor",
+    "plugin",
+    "skills",
+    "commands",
+    "ai-playbook"
+  ],
+  "skills": "skills",
+  "commands": "tools/cursor/commands"
+}
