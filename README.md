@@ -14,6 +14,15 @@ AI活用に関する汎用的なガイドラインやツール設定を共有す
 - フォークして自社用にカスタマイズしてください
 - 一部ディレクトリだけの利用も歓迎します
 
+## Cursor Plugin
+
+このリポジトリは Cursor Plugin として配布できるよう、[`.cursor-plugin/plugin.json`](./.cursor-plugin/plugin.json) を追加しています。
+
+- `skills/`: Cursor Plugin の Skill として配布
+- `tools/cursor/commands/`: Cursor Plugin の Command として配布
+
+Marketplace 提出時は、このリポジトリをそのまま plugin repository として利用できます。詳細は [Cursor Plugins ドキュメント](https://cursor.com/ja/docs/plugins) を参照してください。
+
 ## ディレクトリ構造
 
 ```plaintext
@@ -53,6 +62,8 @@ AIをどう位置付け、どう使うかの「前提」を揃えるためのド
 ### [skills/](./skills/)
 
 [Agent Skills](https://agentskills.io/home)に基づくスキルを配置します。
+
+- `gh-pr-summary-update`: 現在ブランチの GitHub PR を分析し、タイトルと構造化サマリーを更新する Skill
 
 ### [tools/cursor/](./tools/cursor/)
 
