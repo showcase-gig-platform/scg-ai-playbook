@@ -63,8 +63,6 @@ AIをどう位置付け、どう使うかの「前提」を揃えるためのド
 
 [Agent Skills](https://agentskills.io/home)に基づくスキルを配置します。
 
-- `gh-pr-summary-update`: 現在ブランチの GitHub PR を分析し、タイトルと構造化サマリーを更新する Skill
-
 ### [tools/cursor/](./tools/cursor/)
 
 [Cursor](https://cursor.sh/)エディタで使用できるチームコマンド、チームルールの設定を配置します。
