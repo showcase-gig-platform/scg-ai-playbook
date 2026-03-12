@@ -30,8 +30,10 @@ git remote get-url origin
 - `gh` が使えない、または未認証でも GitHub MCP が使えるなら MCP に切り替える。
 - `gh` と GitHub MCP の両方が使えなければ停止する。
 - 未コミットの変更があれば停止する。
+- `git log <base-branch>..HEAD --oneline` が空なら停止する。
+- `git diff <base-branch> --stat` が空なら停止する。
 - `origin` が取得できなければ停止する。
-- ブランチが未 push なら停止せず、`git push -u origin <branch>` を提案する。
+- ブランチが未 push なら `git push -u origin <branch>` を実行し、失敗したら停止する。
 
 ## Step 3: テンプレート選択と本文生成
 
@@ -56,6 +58,7 @@ git remote get-url origin
 
 ## Step 5: PR作成
 
+- push 済みかつ差分とコミットがある状態でのみ次に進む。
 - `gh` CLI を使う場合は `gh pr create` を実行する。
 - `gh` が使えない場合は GitHub MCP の PR 作成機能を使う。
 - 作成後にPRのURLを共有する。
