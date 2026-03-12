@@ -1,6 +1,6 @@
 ---
 name: create-pr
-description: プロジェクトのPRテンプレートに従ってGitHub Pull Requestを作成する。git差分・コミット履歴からPR本文を生成し、PRを作成する必要があるときに使用する。
+description: GitHub Pull Request を作成するときに使う。ユーザーが PR を作りたい、PR本文やタイトルのドラフトを差分から作りたい、既存の PR テンプレートに沿って内容を埋めたいと言ったときに適用する。ブランチ、コミット履歴、差分、リポジトリの PR テンプレートを確認して、レビューしやすいタイトルと本文を組み立ててから PR を作成する。ユーザーが単に「PR 作って」「PR本文を考えて」と依頼した場合でも、この作業が必要なら使う。
 compatibility: Requires gh CLI or GitHub MCP, git, and access to the internet. The target directory must be a git repository.
 license: Apache-2.0
 ---
@@ -37,15 +37,24 @@ git remote get-url origin
 
 ## Step 3: テンプレート選択と本文生成
 
-以下の優先順でテンプレートを探す。
+GitHub のサポート対象に合わせて、以下の順でテンプレートを探す。
 
-1. `.github/pull_request_template.md`
-2. `.github/PULL_REQUEST_TEMPLATE.md`
-3. `references/default-pr-template.md`
+1. 単一テンプレートを探す。
+   - `pull_request_template.*`
+   - `docs/pull_request_template.*`
+   - `.github/pull_request_template.*`
+2. 複数テンプレート用ディレクトリを探す。
+   - `PULL_REQUEST_TEMPLATE/`
+   - `docs/PULL_REQUEST_TEMPLATE/`
+   - `.github/PULL_REQUEST_TEMPLATE/`
+3. リポジトリ固有テンプレートが見つからなければ `references/default-pr-template.md` を使う。
 
-- 見つかったテンプレートの見出し、順序、HTMLコメント、チェックリストを維持する。
+- GitHub ではファイル名の大文字小文字を区別しない前提で探索する。
+- 単一テンプレートが見つかったら、そのテンプレートを採用する。
+- 複数テンプレート用ディレクトリしか見つからない場合は、ユーザーがテンプレート名を指定していればそれを優先する。
+- 複数テンプレート候補があり、ユーザー指定も推測材料もない場合は、候補一覧を示して選択を確認してから進める。
+- 選んだテンプレートの見出し、順序、HTMLコメント、チェックリストを維持する。
 - リポジトリ固有テンプレートがあれば常に優先する。
-- リポジトリ固有テンプレートがなければ `references/default-pr-template.md` を使う。
 - テンプレート項目のうち自動推測できないものだけを追加確認する。
 - PRタイトルはブランチ名を優先し、不適切ならコミットの要約を用いる。
 - 本文はテンプレートの各項目を実際の差分とコミット履歴に基づいて埋める。項目名や粒度はテンプレートに合わせる。
