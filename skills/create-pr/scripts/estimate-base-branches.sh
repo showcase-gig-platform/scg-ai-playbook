@@ -23,4 +23,4 @@ git for-each-ref --sort=-committerdate --count="$max_candidates" --format='%(ref
 		printf '%s | ahead=%s | behind=%s | %s\n' "$base_date" "$ahead" "$behind" "$branch"
 	done |
 	sort -r |
-	head -10
+	awk 'NR <= 10 { print }'
