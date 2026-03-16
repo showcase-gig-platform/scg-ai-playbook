@@ -1,0 +1,19 @@
+{
+  "name": "scg-ai-playbook",
+  "owner": {
+    "name": "Showcase Gig",
+    "email": "plugins@showcase-gig.com"
+  },
+  "metadata": {
+    "description": "Reusable Cursor skills and team commands for practical AI-assisted development workflows.",
+    "version": "0.2.0",
+    "pluginRoot": "plugins"
+  },
+  "plugins": [
+    {
+      "name": "scg-ai-playbook",
+      "source": "./plugins/scg-ai-playbook",
+      "description": "Reusable Cursor skills and team commands for practical AI-assisted development workflows."
+    }
+  ]
+}

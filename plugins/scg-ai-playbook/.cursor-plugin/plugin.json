@@ -1,5 +1,6 @@
 {
   "name": "scg-ai-playbook",
+  "displayName": "SCG AI Playbook",
   "version": "0.2.0",
   "description": "Reusable Cursor skills and team commands for practical AI-assisted development workflows.",
   "author": {
@@ -15,6 +16,5 @@
     "commands",
     "ai-playbook"
   ],
-  "skills": "skills",
-  "commands": "tools/cursor/commands"
+  "commands": "commands"
 }
