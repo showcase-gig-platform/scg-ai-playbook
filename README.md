@@ -31,7 +31,7 @@ scg-ai-playbook/
 ├── governance/       # ガバナンス（パブリックAI利用時の基本ルール）
 ├── guidelines/       # AI活用全般のガイドライン
 └── plugins/                  # Cursor Plugins
-    └── scg-ai-playbook/      # SCG AI Playbook Plugin
+    └── scg-ai-playbook/      # scg-ai-playbook Plugin
         ├── commands/          # Team commands
         ├── skills/            # Agent Skills
         └── rules/             # Team rules

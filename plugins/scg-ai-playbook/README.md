@@ -1,6 +1,6 @@
-# Cursor Team Commands & Rules
+# scg-ai-playbook Cursor Plugin
 
-このディレクトリには、[Cursor](https://cursor.sh/)のチームコマンドとチームルールを配置しています。
+このディレクトリには、[Cursor](https://cursor.sh/)のチームコマンド、チームルール等を配置しています。
 
 ## ディレクトリ構成
 
