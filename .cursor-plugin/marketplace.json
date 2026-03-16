@@ -12,7 +12,7 @@
   "plugins": [
     {
       "name": "scg-ai-playbook",
-      "source": "./plugins/scg-ai-playbook",
+      "source": "scg-ai-playbook",
       "description": "Reusable Cursor skills and team commands for practical AI-assisted development workflows."
     }
   ]
