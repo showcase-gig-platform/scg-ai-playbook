@@ -30,10 +30,11 @@ scg-ai-playbook/
 ├── philosophy/       # AI活用のフィロソフィー（位置付け・役割分担・判断基準）
 ├── governance/       # ガバナンス（パブリックAI利用時の基本ルール）
 ├── guidelines/       # AI活用全般のガイドライン
-└── plugins/          # Cursor Plugins
-    ├── commands/     # Team commands
-    ├── skills/       # Agent Skills
-    └── rules/        # Team rules
+└── plugins/                  # Cursor Plugins
+    └── scg-ai-playbook/      # SCG AI Playbook Plugin
+        ├── commands/          # Team commands
+        ├── skills/            # Agent Skills
+        └── rules/             # Team rules
 ```
 
 ## 内容
