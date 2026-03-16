@@ -58,17 +58,13 @@ AIをどう位置付け、どう使うかの「前提」を揃えるためのド
 - **入れてはいけない情報の分類（抽象化）**: 機密情報を「カテゴリ」で整理し、具体例よりも再現可能な判断軸を提示
 - **OSS / 公開物に含めてよいAI生成物の考え方**: ライセンス、出所・根拠、再現性、レビュー責任、混入リスク（秘匿情報/著作物）など
 
-### [skills/](./plugins/scg-ai-playbook/skills/)
-
-[Agent Skills](https://agentskills.io/home)に基づくスキルを配置します。
-
-### [plugins/](./plugins/scg-ai-playbook/)
+### [plugins/scg-ai-playbook](./plugins/scg-ai-playbook/)
 
 [Cursor](https://cursor.sh/)エディタで使用できるチームコマンド、チームルールの設定を配置します。
 
 - **commands/**: チームコマンド（Markdown形式）
 - **rules/**: チームルール（Markdown形式）
-- skills/: Agent Skills
+- **skills/**: Agent Skills（[Agent Skills](https://agentskills.io/home)準拠）
 
 ## 貢献方法
 
