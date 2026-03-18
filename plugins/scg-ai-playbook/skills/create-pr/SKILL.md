@@ -55,27 +55,24 @@ git remote get-url origin
 - `origin` が取得できなければ停止する。
 - ブランチが未 push なら `git push -u origin <branch>` を実行し、失敗したら停止する。
 
-### 3. テンプレート選択と本文生成
+### 3. PRテンプレート選択と本文生成
 
-GitHub のサポート対象に合わせて、以下の順でテンプレートを探す。
+GitHub のサポート対象に合わせて、次の手順でPR本文のテンプレートを選び、本文を生成する。
 
-1. 単一テンプレートを探す。
-   - `pull_request_template.*`
-   - `docs/pull_request_template.*`
-   - `.github/pull_request_template.*`
-2. 複数テンプレート用ディレクトリを探す。
-   - `PULL_REQUEST_TEMPLATE/`
-   - `docs/PULL_REQUEST_TEMPLATE/`
-   - `.github/PULL_REQUEST_TEMPLATE/`
-3. リポジトリ固有テンプレートが見つからなければ `references/default-pr-template.md` を使う。
-
-- GitHub ではファイル名の大文字小文字を区別しない前提で探索し、リポジトリ固有テンプレートが見つかったらそれを採用する。
-- 複数テンプレート用ディレクトリしか見つからない場合は、ユーザー指定のテンプレート名を優先する。
-- 複数テンプレート候補があり、ユーザー指定も推測材料もない場合は、候補一覧を示して選択を確認してから進める。
-- 選んだテンプレートの見出し、順序、HTMLコメント、チェックリストを維持する。
-- テンプレート項目のうち自動推測できないものだけを追加確認する。
-- PRタイトルは Conventional Commits 形式で作り、`type`、`scope`、`summary` は差分とコミット履歴から総合的に決定する。単一の `scope` に絞れない場合は `type: summary` を使う。
-- 本文はテンプレートの各項目を実際の差分とコミット履歴に基づいて埋め、影響範囲は `git diff <base-branch> --stat` をもとに整理する。
+1. 以下のコマンドを実行してリポジトリ内のPRテンプレートファイルを一覧する。
+   ```bash
+   git ls-files --cached --others --exclude-standard | rg -i '^((docs|\.github)/)?pull_request_template(\.[^/]+|/.+)?$'
+   ```
+2. テンプレートを選ぶ。
+   - リポジトリ固有のテンプレートが見つかったらそれを採用する。
+   - 複数テンプレート用ディレクトリしか見つからない場合は、ユーザー指定のテンプレート名を優先する。
+   - 複数のテンプレート候補があり、ユーザー指定も推測材料もない場合は、候補一覧を示して選択を確認してから進める。
+   - リポジトリ固有のテンプレートが見つからなければ `references/default-pr-template.md` を使う。
+3. 本文を生成する。
+   - 選んだテンプレートの見出し、順序、HTMLコメント、チェックリストを維持する。
+   - テンプレート項目のうち自動推測できないものだけを追加確認する。
+   - PRタイトルは Conventional Commits 形式で作り、`type`、`scope`、`summary` は差分とコミット履歴から総合的に決定する。単一の `scope` に絞れない場合は `type: summary` を使う。
+   - 本文はテンプレートの各項目を実際の差分とコミット履歴に基づいて埋め、影響範囲は `git diff <base-branch> --stat` をもとに整理する。
 
 ### 4. プレビュー
 
