@@ -60,9 +60,11 @@ git remote get-url origin
 GitHub のサポート対象に合わせて、次の手順でPR本文のテンプレートを選び、本文を生成する。
 
 1. 以下のコマンドを実行してリポジトリ内のPRテンプレートファイルを一覧する。
+
    ```bash
-   git ls-files --cached --others --exclude-standard | rg -i '^((docs|\.github)/)?pull_request_template(\.[^/]+|/.+)?$'
+   git ls-files --cached --others --exclude-standard | rg -i '^((docs|\.github)/)?pull_request_template(\.[^/]+|/.+)?$' || echo "No Pull Request templates found"
    ```
+
 2. テンプレートを選ぶ。
    - リポジトリ固有のテンプレートが見つかったらそれを採用する。
    - 複数テンプレート用ディレクトリしか見つからない場合は、ユーザー指定のテンプレート名を優先する。
