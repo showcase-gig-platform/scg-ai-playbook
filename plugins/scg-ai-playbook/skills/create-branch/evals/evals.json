@@ -1,0 +1,23 @@
+{
+  "skill_name": "create-branch",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "今の変更に合わせてブランチ作って",
+      "expected_output": "git status / diff を確認 → 変更内容からプレフィックス（feat/fix/release/epic）を判定 → ブランチ名を提案（例: feat/create-branch-skill）→ ユーザー確認 → git checkout -b で作成し、現在ブランチを伝える。main にいる場合は警告する。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "作業用ブランチ切りたい。認証まわりの修正してる",
+      "expected_output": "fix/ を推奨。変更がなくても「認証まわり」から fix/auth-xxx のような名前を提案 → ユーザー確認 → ブランチ作成。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "release用のブランチを作成したい。v1.2.0 でリリースする",
+      "expected_output": "release/ を推奨。release/v1.2.0 を提案 → ユーザー確認 → git checkout -b release/v1.2.0。",
+      "files": []
+    }
+  ]
+}

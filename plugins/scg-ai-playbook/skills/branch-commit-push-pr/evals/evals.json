@@ -1,0 +1,23 @@
+{
+  "skill_name": "branch-commit-push-pr",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "今の変更でブランチ切ってコミットしてプッシュして PR までやって",
+      "expected_output": "create-branch でブランチ名を決めて作成（確認なし）→ git add -A → Conventional Commits でコミットメッセージ提示・確認・commit → push -u origin <branch> → create-pr でベースブランチ確認・タイトル本文・プレビュー・gh pr create。最後に PR URL を共有。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "変更を全部コミットして PR 出して",
+      "expected_output": "既に作業ブランチにいればブランチ作成は省略可。全ステージ → コミットメッセージ確認 → commit → push → create-pr で PR 作成。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "branch 作って push して PR 作成して",
+      "expected_output": "create-branch（名前を決めて checkout -b、確認なし）→ 全差分を add → コミットメッセージで commit → push → create-pr（ベース確認・本文・作成）。PR URL を共有。",
+      "files": []
+    }
+  ]
+}
