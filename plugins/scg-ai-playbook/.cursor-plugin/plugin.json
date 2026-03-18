@@ -1,7 +1,7 @@
 {
   "name": "scg-ai-playbook",
   "displayName": "SCG AI Playbook",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Reusable Cursor skills and team commands for practical AI-assisted development workflows.",
   "author": {
     "name": "Showcase Gig"
