@@ -1,0 +1,30 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "packages": {
+    ".": {
+      "release-type": "simple",
+      "component": "scg-ai-playbook",
+      "exclude-paths": [
+        "plugins/scg-ai-playbook"
+      ],
+      "extra-files": [
+        {
+          "type": "json",
+          "path": ".cursor-plugin/marketplace.json",
+          "jsonpath": "$.metadata.version"
+        }
+      ]
+    },
+    "plugins/scg-ai-playbook": {
+      "release-type": "simple",
+      "component": "cursor-plugin",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": "plugins/scg-ai-playbook/.cursor-plugin/plugin.json",
+          "jsonpath": "$.version"
+        }
+      ]
+    }
+  }
+}
