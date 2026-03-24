@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Reusable Cursor skills and team commands for practical AI-assisted development workflows.",
-    "version": "0.2.2",
+    "version": "0.3.0",
     "pluginRoot": "plugins"
   },
   "plugins": [
