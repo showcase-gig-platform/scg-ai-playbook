@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/showcase-gig-platform/scg-ai-playbook/compare/cursor-plugin-v0.3.0...cursor-plugin-v0.4.0) (2026-09-08)
+
+
+### Features
+
+* **skills:** 依存関係更新レビューSkill deps-review を追加 ([#23](https://github.com/showcase-gig-platform/scg-ai-playbook/issues/23)) ([61c252e](https://github.com/showcase-gig-platform/scg-ai-playbook/commit/61c252e4da6dcd010270d668676d006f4c2471a1))
+
 ## [0.3.0](https://github.com/showcase-gig-platform/scg-ai-playbook/compare/cursor-plugin-v0.2.2...cursor-plugin-v0.3.0) (2026-03-24)
 
 
