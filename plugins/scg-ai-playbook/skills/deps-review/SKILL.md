@@ -8,7 +8,7 @@ license: Apache-2.0
 
 ## Overview
 
-人間・エージェントによるローカルの依存関係更新、Dependabot・Renovate等の更新PRをレビューし、根拠付きの判定を会話内に返す。GitHubレビューやコメントの投稿はこのSkillに含めない。upstreamのchangelogを読むだけでなく、リポジトリ内の利用箇所と照合し、「未確認」を「影響なし」と混同しないことがこのSkillの核心である。
+人間・エージェントによるローカルの依存関係更新、Dependabot・Renovate等の更新PRをレビューし、根拠付きの判定を行う。upstreamのchangelogを読むだけでなく、リポジトリ内の利用箇所と照合し、「未確認」を「影響なし」と混同しないことがこのSkillの核心である。
 
 ## What's Needed From User
 
@@ -157,7 +157,7 @@ latency / CPU / memory / 起動時間、network通信量、timeout / retry / con
 
 **pre-commit hook**: revision / hook ID / argument / stage / runtime要件、`pre-commit run --all-files`、自動整形による無関係差分の混入、外部CLIとの互換性。
 
-**未掲載のエコシステム**（Rust、Java、Kotlin、.NET、PHP、Elixir等）: 共通チェックを適用し、manifest → lockfile → runtime → CI → コンテナ → 生成物の順に確認する。CI対象外のworkspace / subprojectを確認する。
+**上記以外のエコシステム**: 共通チェックを適用し、manifest → lockfile → runtime → CI → コンテナ → 生成物の順に確認する。CI対象外のworkspace / subprojectを確認する。
 
 ### 承認判断
 
@@ -194,5 +194,5 @@ latency / CPU / memory / 起動時間、network通信量、timeout / retry / con
 - レビュー対象を修正する、または修正commitをpushする（修正が必要な場合はレビュー結果で提案する）
 - 更新対象をmockしているtestの成功を検証根拠にする
 - 日本語以外でレビュー結果を記載する
-- GitHubレビューやコメントを投稿する
+- GitHubレビューやコメント、Issueを投稿する
 - 判定理由を本文の後半に置く
