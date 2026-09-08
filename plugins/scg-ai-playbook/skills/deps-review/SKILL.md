@@ -8,7 +8,7 @@ license: Apache-2.0
 
 ## Overview
 
-人間・エージェントによるローカルの依存関係更新、Dependabot・Renovate等の更新PRをレビューし、根拠付きの判定を行う。upstreamのchangelogを読むだけでなく、リポジトリ内の利用箇所と照合し、「未確認」を「影響なし」と混同しないことがこのSkillの核心である。
+ローカルの依存関係更新差分や、Dependabot・Renovate等の更新PRをレビューし、根拠付きの判定を行う。upstreamのchangelogを読むだけでなく、リポジトリ内の利用箇所と照合し、「未確認」を「影響なし」と混同しないことがこのSkillの核心である。
 
 ## What's Needed From User
 
