@@ -2,7 +2,7 @@
   "name": "scg-ai-playbook",
   "displayName": "SCG AI Playbook",
   "version": "0.4.0",
-  "description": "Reusable Cursor skills and team commands for practical AI-assisted development workflows.",
+  "description": "Reusable Cursor skills for practical AI-assisted development workflows.",
   "author": {
     "name": "Showcase Gig"
   },
@@ -13,8 +13,6 @@
     "cursor",
     "plugin",
     "skills",
-    "commands",
     "ai-playbook"
-  ],
-  "commands": "commands"
+  ]
 }

@@ -5,7 +5,7 @@
     "email": "plugins@showcase-gig.com"
   },
   "metadata": {
-    "description": "Reusable Cursor skills and team commands for practical AI-assisted development workflows.",
+    "description": "Reusable Cursor skills for practical AI-assisted development workflows.",
     "version": "0.3.0",
     "pluginRoot": "plugins"
   },
@@ -13,7 +13,7 @@
     {
       "name": "scg-ai-playbook",
       "source": "scg-ai-playbook",
-      "description": "Reusable Cursor skills and team commands for practical AI-assisted development workflows."
+      "description": "Reusable Cursor skills for practical AI-assisted development workflows."
     }
   ]
 }
