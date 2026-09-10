@@ -14,13 +14,12 @@ AI活用に関する汎用的なガイドラインやツール設定を共有す
 - フォークして自社用にカスタマイズしてください
 - 一部ディレクトリだけの利用も歓迎します
 
-## Cursor Plugin
+## プラグインの導入
 
-このリポジトリは Cursor Plugin として配布できるよう、[`.cursor-plugin/marketplace.json`](./.cursor-plugin/marketplace.json) を追加しています。
+スキルを [Agent Plugins](https://agent-plugins.org/) と Claude Code のプラグインとして配布します。
+Cursor、Codex、Devin、Claude Code の導入手順は [プラグインの README](./plugins/scg-ai-playbook/README.md) を参照してください。
 
-- `plugins/scg-ai-playbook/skills/`: Cursor Plugin の Skill として配布
-
-Marketplace 提出時は、このリポジトリをそのまま plugin repository として利用できます。詳細は [Cursor Plugins ドキュメント](https://cursor.com/ja/docs/plugins) を参照してください。
+全クライアントで `plugins/scg-ai-playbook/skills/` を共有します。
 
 ## ディレクトリ構造
 
@@ -29,7 +28,7 @@ scg-ai-playbook/
 ├── philosophy/       # AI活用のフィロソフィー（位置付け・役割分担・判断基準）
 ├── governance/       # ガバナンス（パブリックAI利用時の基本ルール）
 ├── guidelines/       # AI活用全般のガイドライン
-└── plugins/                  # Cursor Plugins
+└── plugins/                  # Agent Plugins / Claude Code
     └── scg-ai-playbook/      # scg-ai-playbook Plugin
         └── skills/            # Agent Skills
 ```
@@ -58,7 +57,7 @@ AIをどう位置付け、どう使うかの「前提」を揃えるためのド
 
 ### [plugins/scg-ai-playbook](./plugins/scg-ai-playbook/)
 
-[Cursor](https://cursor.sh/)エディタで使用できる Agent Skills を配置します。
+対応クライアントに配布する Agent Skills を配置します。
 
 - **skills/**: Agent Skills（[Agent Skills](https://agentskills.io/home)準拠）
 

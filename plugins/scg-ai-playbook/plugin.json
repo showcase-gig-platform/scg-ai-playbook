@@ -1,18 +1,19 @@
 {
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "scg-ai-playbook",
-  "displayName": "SCG AI Playbook",
   "version": "0.4.0",
-  "description": "Reusable Cursor skills for practical AI-assisted development workflows.",
+  "description": "Reusable agent skills for practical AI-assisted development workflows.",
   "author": {
-    "name": "Showcase Gig"
+    "name": "Showcase Gig Inc."
   },
   "homepage": "https://github.com/showcase-gig-platform/scg-ai-playbook",
   "repository": "https://github.com/showcase-gig-platform/scg-ai-playbook",
   "license": "Apache-2.0",
   "keywords": [
-    "cursor",
+    "agent-plugins",
     "plugin",
     "skills",
-    "ai-playbook"
+    "ai-playbook",
+    "showcase-gig"
   ]
 }

@@ -1,0 +1,20 @@
+{
+  "name": "scg-ai-playbook",
+  "interface": {
+    "displayName": "SCG AI Playbook"
+  },
+  "plugins": [
+    {
+      "name": "scg-ai-playbook",
+      "source": {
+        "source": "local",
+        "path": "./plugins/scg-ai-playbook"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

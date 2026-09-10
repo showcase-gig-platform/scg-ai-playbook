@@ -1,18 +1,17 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
   "name": "scg-ai-playbook",
   "owner": {
     "name": "Showcase Gig",
     "email": "plugins@showcase-gig.com"
   },
   "metadata": {
-    "description": "Reusable agent skills for practical AI-assisted development workflows.",
-    "version": "0.3.0",
-    "pluginRoot": "plugins"
+    "description": "Reusable agent skills for practical AI-assisted development workflows."
   },
   "plugins": [
     {
       "name": "scg-ai-playbook",
-      "source": "scg-ai-playbook",
+      "source": "./plugins/scg-ai-playbook",
       "description": "Reusable agent skills for practical AI-assisted development workflows."
     }
   ]
