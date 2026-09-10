@@ -43,6 +43,12 @@ Claude Code 内で marketplace を登録し、プラグインをインストー�
 /plugin install scg-ai-playbook@scg-ai-playbook
 ```
 
+登録済みの marketplace を手動で更新する場合は、Claude Code 内で次を実行します。
+
+```text
+/plugin marketplace update scg-ai-playbook
+```
+
 詳細は [Claude Code の marketplace 配布](https://code.claude.com/docs/en/plugin-marketplaces) を参照してください。
 
 ### Codex
@@ -50,6 +56,12 @@ Claude Code 内で marketplace を登録し、プラグインをインストー�
 ```bash
 codex plugin marketplace add showcase-gig-platform/scg-ai-playbook
 codex plugin add scg-ai-playbook@scg-ai-playbook
+```
+
+登録済みの marketplace を更新する場合は、既存の marketplace 名を指定します。
+
+```bash
+codex plugin marketplace upgrade scg-ai-playbook
 ```
 
 画面ごとの利用方法は [Plugins](https://learn.chatgpt.com/docs/plugins)、配布形式は [Package your plugin](https://developers.openai.com/plugins/build/plugins) を参照してください。
