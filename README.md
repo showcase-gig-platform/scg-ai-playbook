@@ -28,7 +28,7 @@ scg-ai-playbook/
 ├── philosophy/       # AI活用のフィロソフィー（位置付け・役割分担・判断基準）
 ├── governance/       # ガバナンス（パブリックAI利用時の基本ルール）
 ├── guidelines/       # AI活用全般のガイドライン
-└── plugins/                  # Agent Plugins / Claude Code
+└── plugins/                  # Agent Plugins / Claude Code Plugins
     └── scg-ai-playbook/      # scg-ai-playbook Plugin
         └── skills/            # Agent Skills
 ```
@@ -57,9 +57,7 @@ AIをどう位置付け、どう使うかの「前提」を揃えるためのド
 
 ### [plugins/scg-ai-playbook](./plugins/scg-ai-playbook/)
 
-対応クライアントに配布する Agent Skills を配置します。
-
-- **skills/**: Agent Skills（[Agent Skills](https://agentskills.io/home)準拠）
+対応クライアントに配布する Agent Plugins を配置します。
 
 ## 貢献方法
 
