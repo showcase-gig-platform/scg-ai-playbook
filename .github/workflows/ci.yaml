@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  validate-json-schema:
+    name: Validate JSON Schema
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Validate Agent Plugins manifest
+        uses: dsanders11/json-schema-validate-action@v2.1.0
+        with:
+          schema: https://agent-plugins.org/schemas/1.0.0/plugin.schema.json
+          files: plugins/scg-ai-playbook/plugin.json
+      - name: Validate Claude Code manifest
+        uses: dsanders11/json-schema-validate-action@v2.1.0
+        with:
+          schema: https://json.schemastore.org/claude-code-plugin-manifest.json
+          files: plugins/scg-ai-playbook/.claude-plugin/plugin.json
+      - name: Validate Claude Code marketplace
+        uses: dsanders11/json-schema-validate-action@v2.1.0
+        with:
+          schema: https://json.schemastore.org/claude-code-marketplace.json
+          files: .claude-plugin/marketplace.json
