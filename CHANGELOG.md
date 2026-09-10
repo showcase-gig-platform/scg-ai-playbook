@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/showcase-gig-platform/scg-ai-playbook/compare/scg-ai-playbook-v0.3.0...scg-ai-playbook-v0.4.0) (2026-09-10)
+
+
+### Features
+
+* **plugins:** Agent PluginsとClaude Code Plugins対応 ([#26](https://github.com/showcase-gig-platform/scg-ai-playbook/issues/26)) ([c09ec6d](https://github.com/showcase-gig-platform/scg-ai-playbook/commit/c09ec6d692426efe4873c4d7c258a8b85e485ad8))
+
 ## [0.3.0](https://github.com/showcase-gig-platform/scg-ai-playbook/compare/scg-ai-playbook-v0.2.2...scg-ai-playbook-v0.3.0) (2026-03-24)
 
 
