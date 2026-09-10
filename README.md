@@ -19,7 +19,6 @@ AI活用に関する汎用的なガイドラインやツール設定を共有す
 このリポジトリは Cursor Plugin として配布できるよう、[`.cursor-plugin/marketplace.json`](./.cursor-plugin/marketplace.json) を追加しています。
 
 - `plugins/scg-ai-playbook/skills/`: Cursor Plugin の Skill として配布
-- `plugins/scg-ai-playbook/commands/`: Cursor Plugin の Command として配布
 
 Marketplace 提出時は、このリポジトリをそのまま plugin repository として利用できます。詳細は [Cursor Plugins ドキュメント](https://cursor.com/ja/docs/plugins) を参照してください。
 
@@ -32,9 +31,7 @@ scg-ai-playbook/
 ├── guidelines/       # AI活用全般のガイドライン
 └── plugins/                  # Cursor Plugins
     └── scg-ai-playbook/      # scg-ai-playbook Plugin
-        ├── commands/          # Team commands
-        ├── skills/            # Agent Skills
-        └── rules/             # Team rules
+        └── skills/            # Agent Skills
 ```
 
 ## 内容
@@ -61,10 +58,8 @@ AIをどう位置付け、どう使うかの「前提」を揃えるためのド
 
 ### [plugins/scg-ai-playbook](./plugins/scg-ai-playbook/)
 
-[Cursor](https://cursor.sh/)エディタで使用できるチームコマンド、チームルールの設定を配置します。
+[Cursor](https://cursor.sh/)エディタで使用できる Agent Skills を配置します。
 
-- **commands/**: チームコマンド（Markdown形式）
-- **rules/**: チームルール（Markdown形式）
 - **skills/**: Agent Skills（[Agent Skills](https://agentskills.io/home)準拠）
 
 ## 貢献方法
