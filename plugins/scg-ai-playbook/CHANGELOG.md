@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/showcase-gig-platform/scg-ai-playbook/compare/agent-plugin-v0.4.0...agent-plugin-v0.5.0) (2026-09-10)
+
+
+### Features
+
+* **plugins:** Agent PluginsとClaude Code Plugins対応 ([#26](https://github.com/showcase-gig-platform/scg-ai-playbook/issues/26)) ([c09ec6d](https://github.com/showcase-gig-platform/scg-ai-playbook/commit/c09ec6d692426efe4873c4d7c258a8b85e485ad8))
+
 ## [0.4.0](https://github.com/showcase-gig-platform/scg-ai-playbook/compare/cursor-plugin-v0.3.0...cursor-plugin-v0.4.0) (2026-09-08)
 
 
