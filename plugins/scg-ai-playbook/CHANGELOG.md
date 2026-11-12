@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.1](https://github.com/showcase-gig-platform/scg-ai-playbook/compare/agent-plugin-v0.5.0...agent-plugin-v0.5.1) (2026-11-12)
+
+
+### Bug Fixes
+
+* **skills:** deps-review の誤 Approve 経路を塞ぐ ([#28](https://github.com/showcase-gig-platform/scg-ai-playbook/issues/28)) ([813973a](https://github.com/showcase-gig-platform/scg-ai-playbook/commit/813973a31067116aa22d9534f7f30218b4af7ee6))
+
 ## [0.5.0](https://github.com/showcase-gig-platform/scg-ai-playbook/compare/agent-plugin-v0.4.0...agent-plugin-v0.5.0) (2026-09-10)
 
 
