@@ -46,8 +46,8 @@ git for-each-ref --sort=-committerdate --count="$max_candidates" --format='%(ref
 		has_ahead=0
 		{ [ "$ahead" -gt 0 ] || [ -n "$dirty" ]; } && has_ahead=1
 
-		printf '%s\t%s\t%s | ahead=%s | behind=%s | %s\n' "$has_ahead" "$base_ts" "$base_date" "$ahead" "$behind" "$branch"
+		printf '%s\t%s\t%s\t%s | ahead=%s | behind=%s | %s\n' "$has_ahead" "$base_ts" "$behind" "$base_date" "$ahead" "$behind" "$branch"
 	done |
-	LC_ALL=C sort -t'	' -k1,1nr -k2,2nr |
-	cut -f3- |
+	LC_ALL=C sort -t'	' -k1,1nr -k2,2nr -k3,3n |
+	cut -f4- |
 	awk 'NR <= 10 { print }'
