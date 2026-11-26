@@ -3,6 +3,7 @@ set -euo pipefail
 
 current_branch=$(git branch --show-current 2>/dev/null || true)
 target_remote=${1:-origin}
+head_remote=${2:-origin}
 max_candidates=${ESTIMATE_BASE_BRANCHES_MAX_CANDIDATES:-100}
 dirty=$(git status --porcelain 2>/dev/null || true)
 
@@ -10,18 +11,10 @@ target_url=$(git remote get-url "$target_remote" 2>/dev/null) || {
 	printf 'Remote not found: %s\n' "$target_remote" >&2
 	exit 1
 }
-
-push_remote=""
-if [ -n "$current_branch" ]; then
-	push_remote=$(git config --get "branch.$current_branch.pushRemote" 2>/dev/null || true)
-	[ -z "$push_remote" ] && push_remote=$(git config --get remote.pushDefault 2>/dev/null || true)
-	[ -z "$push_remote" ] && push_remote=$(git config --get "branch.$current_branch.remote" 2>/dev/null || true)
-fi
-[ -z "$push_remote" ] && push_remote="origin"
-push_url=$(git remote get-url "$push_remote" 2>/dev/null || true)
+head_url=$(git remote get-url "$head_remote" 2>/dev/null || true)
 
 same_repo=0
-if [ "$target_remote" = "$push_remote" ] || { [ -n "$push_url" ] && [ "$target_url" = "$push_url" ]; }; then
+if [ "$target_remote" = "$head_remote" ] || { [ -n "$head_url" ] && [ "$target_url" = "$head_url" ]; }; then
 	same_repo=1
 fi
 

@@ -16,7 +16,7 @@ npx skills add showcase-gig-platform/scg-ai-playbook --skill <skill-name>
 - `deps-review`: ローカル差分・依存更新PRをレビューし、利用箇所との照合に基づく判定を返す
 - `create-branch`: 現在の変更内容に合うブランチ名を提案し、ブランチを作成
 - `create-commit`: Git の変更を整理し、what と why を含むコミットメッセージで変更をコミット
-- `create-pr`: GitHub PR を作成。必要なら新規ブランチ作成・未コミット変更のコミット（create-commit 利用）を事前に行う。main/release/*/epic/* のときは新規ブランチ要否を確認。テンプレートに従い差分から本文を生成
+- `create-pr`: GitHub PR の作成、または差分と PR テンプレートからのタイトル・本文作成を行う。PR 作成時は必要に応じて新規ブランチ作成・未コミット変更のコミット（create-commit 利用）を事前に行う
 
 ## 参考
 
