@@ -4,6 +4,7 @@ set -euo pipefail
 current_branch=$(git branch --show-current 2>/dev/null || true)
 target_remote=${1:-origin}
 max_candidates=${ESTIMATE_BASE_BRANCHES_MAX_CANDIDATES:-100}
+dirty=$(git status --porcelain 2>/dev/null || true)
 
 target_url=$(git remote get-url "$target_remote" 2>/dev/null) || {
 	printf 'Remote not found: %s\n' "$target_remote" >&2
@@ -43,7 +44,7 @@ git for-each-ref --sort=-committerdate --count="$max_candidates" --format='%(ref
 		behind=$(git rev-list --count "$merge_base..$ref" 2>/dev/null) || continue
 
 		has_ahead=0
-		[ "$ahead" -gt 0 ] && has_ahead=1
+		{ [ "$ahead" -gt 0 ] || [ -n "$dirty" ]; } && has_ahead=1
 
 		printf '%s\t%s\t%s | ahead=%s | behind=%s | %s\n' "$has_ahead" "$base_ts" "$base_date" "$ahead" "$behind" "$branch"
 	done |

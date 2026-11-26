@@ -1,10 +1,10 @@
 # fork 構成での PR 作成補足
 
-作成元リモート（`<head-remote>`、通常 `origin`）と作成先リモート（`<target-remote>`、通常 `upstream`）が異なる場合は、`SKILL.md` の `origin` を次のとおり読み替える。`<head-owner>` は作成元リポジトリの所有者、`<target-owner>/<target-repo>` は作成先リポジトリを指す。
+作成元リモート（`<head-remote>`、通常 `origin`）と作成先リモート（`<target-remote>`、通常 `upstream`）が異なる場合、または `gh repo view --json nameWithOwner` が `origin` と一致しない場合は、`SKILL.md` の `origin` と `<owner/repo>` を次のとおり読み替える。`<head-owner>` は作成元リポジトリの所有者、`<target-owner>/<target-repo>` は作成先リポジトリを指す。
 
 ## 手順 1（重複確認）
 
-`git ls-remote --heads <head-remote> "refs/heads/<ブランチ名>"` で作成元リモートの重複を確認する。
+`origin` を `<head-remote>` に読み替えて、作成元リモートの重複を確認する。
 
 ## 手順 2（ベース候補推定）
 
@@ -12,8 +12,8 @@
 
 ## 手順 3（差分確認と既存 PR 照会）
 
-1. 作成先リモートからベースブランチを fetch し、`git rev-parse FETCH_HEAD` の SHA を `<base-ref>` に固定する。同一ブランチ判定は「リポジトリ＋ブランチ」で行う。
-2. 既存 PR の照会は REST API を使い、応答の `head.repo.full_name` が作成元リポジトリと一致する PR だけを対象にする（GitHub MCP の場合も同等に照合する）。
+1. `<target-remote>` からベースブランチを fetch し、`git rev-parse FETCH_HEAD` の SHA を `<base-ref>` に固定する。同一ブランチ判定は「リポジトリ＋ブランチ」で行う。
+2. 既存 PR の照会は REST API を使い、応答の `head.repo.full_name` が作成元リポジトリと一致する PR だけを対象にする。GitHub MCP でも同じ条件で照合する。
 
 ```bash
 gh api --method GET "repos/<target-owner>/<target-repo>/pulls" \
@@ -22,11 +22,11 @@ gh api --method GET "repos/<target-owner>/<target-repo>/pulls" \
 
 ## 手順 4（テンプレート取得）
 
-作成先リポジトリの既定ブランチ参照からテンプレートを一覧する。
+作成先リポジトリ `<target-owner>/<target-repo>` の既定ブランチ参照からテンプレートを一覧する。
 
 ## 手順 5（確認提示）
 
-作成先リポジトリ、push 先リモート・ブランチ、承認対象のコミット SHA もあわせて提示する。
+作成先リポジトリ `<target-owner>/<target-repo>`、push 先リモート・ブランチ、承認対象のコミット SHA もあわせて提示する。
 
 ## 手順 6（push と PR 作成）
 
