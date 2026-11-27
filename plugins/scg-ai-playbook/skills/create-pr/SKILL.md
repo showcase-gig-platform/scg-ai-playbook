@@ -36,7 +36,7 @@ license: Apache-2.0
 1. PR 作成時は `origin` URL から作成先 `<owner/repo>` を確定し、取れなければ停止する。現在のブランチとベースブランチが同じならユーザーに確認してブランチ作成かベースブランチ選択へ戻る。`git fetch origin <base-branch>` 直後に `base_ref=$(git rev-parse FETCH_HEAD)` のように SHA へ解決して `<base-ref>` に固定する。タイトル・本文のみでは `origin/<base-branch>` を優先し、なければローカルの `<base-branch>` を `<base-ref>` にする。
 2. `git log <base-ref>..HEAD --oneline` と三点 diff `git diff <base-ref>...HEAD` で変更を確認し、参照解決や `merge-base` の失敗を「差分なし」と誤認せず停止する。履歴または差分が空なら停止する（タイトル・本文のみで未コミットの変更を対象にする場合を除く）。
 3. 未コミットの変更が残る場合、PR 作成時は手順 1 に戻し、コミットできなければ停止する。タイトル・本文のみでは本文に含めるか確認し、含めるなら `git diff --merge-base <base-ref>` と未追跡ファイルも読む。
-4. PR 作成時は `gh pr list --repo <owner/repo> --head <branch> --state open --json url,baseRefName,isCrossRepository`（gh CLI がなければ GitHub MCP）で `isCrossRepository == false` の開いている PR を照会する。
+4. PR 作成時は `gh pr list --repo <owner/repo> --head <branch> --state open --json url,baseRefName,isCrossRepository`（gh CLI が使えなければ GitHub MCP）で `isCrossRepository == false` の開いている PR を照会する。
    - 同じベースブランチの PR がある場合: URL を示し、既存 PR へ push してよいか確認する。承認されれば対象 SHA を確定して手順 4〜5 を省き、手順 6 の push と URL 共有のみ行う。拒否されれば停止する。
    - 別のベースブランチの PR がある場合: push するとその PR も更新される旨を確認し、承認を得てから続行する。
 

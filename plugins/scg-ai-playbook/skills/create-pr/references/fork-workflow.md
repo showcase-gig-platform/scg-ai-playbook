@@ -1,10 +1,10 @@
 # fork 構成での読み替え
 
-`SKILL.md` の `origin` と `<owner/repo>` を、作成元リモート `<head-remote>`（通常 `origin`、所有者 `<head-owner>`）と作成先リモート `<target-remote>`（通常 `upstream`、`<target-owner>/<target-repo>`）に読み替える。
+`SKILL.md` の `origin` と `<owner/repo>` を、作成元リモート `<head-remote>`（通常 `origin`、所有者 `<head-owner>`）と作成先リモート `<target-remote>`（通常 `upstream`、`<target-owner>/<target-repo>`）に読み替える。作成先リポジトリを指すリモートがローカルにない場合は、承認を得て対象リポジトリの URL でリモートを登録してから進む。
 
 - 手順 1: 重複確認は `<head-remote>` で行う。
 - 手順 2: `bash <skill-dir>/scripts/estimate-base-branches.sh <target-remote> <head-remote>` を実行する（`<head-remote>` が `origin` なら第 2 引数は省略できる）。
-- 手順 3: `<target-remote>` からベースブランチを fetch して SHA を固定し、同一ブランチ判定はリポジトリとブランチ名の組で行う。既存 PR の照会は次のコマンド（gh CLI がなければ GitHub MCP）で行い、応答の `head.repo.full_name` が作成元リポジトリと一致するものだけを対象にする。
+- 手順 3: `<target-remote>` からベースブランチを fetch して SHA を固定し、同一ブランチ判定はリポジトリとブランチ名の組で行う。既存 PR の照会は次のコマンド（gh CLI が使えなければ GitHub MCP）で行い、応答の `head.repo.full_name` が作成元リポジトリと一致するものだけを対象にする。
 
   ```bash
   gh api --method GET "repos/<target-owner>/<target-repo>/pulls" -f state=open -f head="<head-owner>:<branch>"
