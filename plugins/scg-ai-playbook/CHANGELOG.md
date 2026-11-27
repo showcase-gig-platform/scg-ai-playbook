@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.6.0](https://github.com/showcase-gig-platform/scg-ai-playbook/compare/agent-plugin-v0.5.0...agent-plugin-v0.6.0) (2026-11-27)
+
+
+### Features
+
+* **create-pr:** fork 対応と安全確認を追加し手順と表現を整理する ([#30](https://github.com/showcase-gig-platform/scg-ai-playbook/issues/30)) ([ec3a20e](https://github.com/showcase-gig-platform/scg-ai-playbook/commit/ec3a20ed8cb9522671758fe098d1de11ad1d45e1))
+
+
+### Bug Fixes
+
+* **skills:** deps-review の誤 Approve 経路を塞ぐ ([#28](https://github.com/showcase-gig-platform/scg-ai-playbook/issues/28)) ([813973a](https://github.com/showcase-gig-platform/scg-ai-playbook/commit/813973a31067116aa22d9534f7f30218b4af7ee6))
+
 ## [0.5.0](https://github.com/showcase-gig-platform/scg-ai-playbook/compare/agent-plugin-v0.4.0...agent-plugin-v0.5.0) (2026-09-10)
 
 
