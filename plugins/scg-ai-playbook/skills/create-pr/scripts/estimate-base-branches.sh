@@ -2,25 +2,45 @@
 set -euo pipefail
 
 current_branch=$(git branch --show-current 2>/dev/null || true)
+target_remote=${1:-origin}
+head_remote=${2:-origin}
 max_candidates=${ESTIMATE_BASE_BRANCHES_MAX_CANDIDATES:-100}
+dirty=$(git status --porcelain 2>/dev/null || true)
 
-git for-each-ref --sort=-committerdate --count="$max_candidates" --format='%(refname) %(refname:short)' refs/remotes/origin |
+target_url=$(git remote get-url "$target_remote" 2>/dev/null) || {
+	printf 'Remote not found: %s\n' "$target_remote" >&2
+	exit 1
+}
+head_url=$(git remote get-url "$head_remote" 2>/dev/null || true)
+
+same_repo=0
+if [ "$target_remote" = "$head_remote" ] || { [ -n "$head_url" ] && [ "$target_url" = "$head_url" ]; }; then
+	same_repo=1
+fi
+
+git for-each-ref --sort=-committerdate --count="$max_candidates" --format='%(refname) %(refname:short)' "refs/remotes/$target_remote" |
 	while IFS=' ' read -r full_ref ref; do
 		[ -n "$ref" ] || continue
-		[ "$full_ref" = "refs/remotes/origin/HEAD" ] && continue
+		[ "$full_ref" = "refs/remotes/$target_remote/HEAD" ] && continue
 
-		branch=${ref#origin/}
+		branch=${ref#"$target_remote"/}
 		[ -n "$branch" ] || continue
-		[ "$branch" = "$current_branch" ] && continue
+		[ "$same_repo" -eq 1 ] && [ "$branch" = "$current_branch" ] && continue
 
 		merge_base=$(git merge-base HEAD "$ref" 2>/dev/null) || continue
 		[ -n "$merge_base" ] || continue
 
-		base_date=$(git show -s --format='%ci' "$merge_base" 2>/dev/null) || continue
+		base_info=$(git show -s --format='%ct	%ci' "$merge_base" 2>/dev/null) || continue
+		base_ts=${base_info%%	*}
+		base_date=${base_info#*	}
 		ahead=$(git rev-list --count "$merge_base..HEAD" 2>/dev/null) || continue
 		behind=$(git rev-list --count "$merge_base..$ref" 2>/dev/null) || continue
 
-		printf '%s | ahead=%s | behind=%s | %s\n' "$base_date" "$ahead" "$behind" "$branch"
+		has_ahead=0
+		{ [ "$ahead" -gt 0 ] || [ -n "$dirty" ]; } && has_ahead=1
+
+		printf '%s\t%s\t%s\t%s | ahead=%s | behind=%s | %s\n' "$has_ahead" "$base_ts" "$behind" "$base_date" "$ahead" "$behind" "$branch"
 	done |
-	sort -r |
+	LC_ALL=C sort -t'	' -k1,1nr -k2,2nr -k3,3n |
+	cut -f4- |
 	awk 'NR <= 10 { print }'
